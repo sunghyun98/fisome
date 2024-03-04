@@ -1,10 +1,4 @@
-
-여기가 수정된 코드입니다.
-
-        java
-        Copy code
-        package com.bingle.fisome.service;
-
+package com.bingle.fisome.service;
 import com.bingle.fisome.controller.auth.MemberRequest;
 import com.bingle.fisome.repository.MemberMapper;
 import jakarta.transaction.Transactional;
@@ -25,8 +19,8 @@ public class MemberService {
      * @return PK
      */
     @Transactional
-    public int saveMember(final MemberRequest params) {
+    public void saveMember(final MemberRequest params) {
         params.encodingPassword(passwordEncoder);
-        return memberMapper.save(params);
+        memberMapper.save(params);
     }
 }
