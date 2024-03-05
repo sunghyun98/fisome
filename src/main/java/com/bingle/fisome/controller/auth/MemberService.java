@@ -1,6 +1,5 @@
-package com.bingle.fisome.service;
-import com.bingle.fisome.controller.auth.MemberRequest;
-import com.bingle.fisome.repository.MemberMapper;
+package com.bingle.fisome.controller.auth;
+
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -9,7 +8,6 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class MemberService {
-
     private final MemberMapper memberMapper;
     private final PasswordEncoder passwordEncoder;
 
@@ -19,8 +17,10 @@ public class MemberService {
      * @return PK
      */
     @Transactional
-    public void saveMember(final MemberRequest params) {
+    public Long saveMember(final MemberRequest params) {
         params.encodingPassword(passwordEncoder);
         memberMapper.save(params);
+        return params.getId();
     }
+
 }
