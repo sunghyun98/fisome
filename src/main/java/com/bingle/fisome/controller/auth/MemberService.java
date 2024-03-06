@@ -1,5 +1,6 @@
 package com.bingle.fisome.controller.auth;
 
+import com.bingle.fisome.repository.mybatis.MemberMapper;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
