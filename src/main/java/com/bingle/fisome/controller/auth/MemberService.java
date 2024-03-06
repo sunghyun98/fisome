@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class MemberService {
     private final MemberMapper memberMapper;
-    private final PasswordEncoder passwordEncoder;
 
     /**
      * 회원 정보 저장 (회원가입)
@@ -19,7 +18,6 @@ public class MemberService {
      */
     @Transactional
     public Long saveMember(final MemberRequest params) {
-        params.encodingPassword(passwordEncoder);
         memberMapper.save(params);
         return params.getId();
     }

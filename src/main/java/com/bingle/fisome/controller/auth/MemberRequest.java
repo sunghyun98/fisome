@@ -1,8 +1,6 @@
 package com.bingle.fisome.controller.auth;
 
 import lombok.Data;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.thymeleaf.util.StringUtils;
 
 @Data
 public class MemberRequest {
@@ -13,10 +11,5 @@ public class MemberRequest {
     private String password; //비밀번호
 
     //비밀번호 암호화
-    public void encodingPassword(PasswordEncoder passwordEncoder) {
-        if (StringUtils.isEmpty(password)) {
-            return;
-        }
-        password = passwordEncoder.encode(password);
-    }
+
 }
