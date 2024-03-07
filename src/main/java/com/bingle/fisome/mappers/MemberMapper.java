@@ -1,9 +1,7 @@
-package com.bingle.fisome.repository.mybatis;
+package com.bingle.fisome.mappers;
 
 import com.bingle.fisome.controller.auth.MemberRequest;
-import com.bingle.fisome.controller.auth.MemberResponse;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface MemberMapper {
@@ -13,7 +11,5 @@ public interface MemberMapper {
      *
      */
     void save(MemberRequest params);
-
-
 
 }

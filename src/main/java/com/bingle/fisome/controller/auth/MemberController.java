@@ -23,7 +23,9 @@ public class MemberController {
     @PostMapping("/members")
     @ResponseBody
     public Long saveMember(@RequestBody final MemberRequest params) {
+        System.out.println("saveMemberParams = " + params);
         return memberService.saveMember(params);
     }
+
 
 }

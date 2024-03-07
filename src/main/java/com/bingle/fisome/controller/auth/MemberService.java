@@ -1,10 +1,10 @@
 package com.bingle.fisome.controller.auth;
 
-import com.bingle.fisome.repository.mybatis.MemberMapper;
+import com.bingle.fisome.mappers.MemberMapper;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
 
 @Service
 @RequiredArgsConstructor
@@ -18,7 +18,9 @@ public class MemberService {
      */
     @Transactional
     public Long saveMember(final MemberRequest params) {
+        System.out.println("params = " + params);
         memberMapper.save(params);
+        System.out.println("params1 = " + params);
         return params.getId();
     }
 
