@@ -9,6 +9,7 @@ public class MemberRequest {
     private String email; //메일
     private String password; //비밀번호
 
+
     //비밀번호 암호화
 
 }
