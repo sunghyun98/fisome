@@ -38,6 +38,7 @@ dependencies {
 	 * 2024-03-03 spring-security-crypto
 	 */
 	implementation 'org.springframework.security:spring-security-crypto'
+
 	/**
 	 * 2024-03-03 mybatis
 	 */
